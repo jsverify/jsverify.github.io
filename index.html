@@ -203,7 +203,7 @@
   We could prove the proposition by hand, as there are only four distinct <em>bool &rarr; bool</em> functions. Or we can let <em>JSVerify</em> generate inputs for us.
   <p>
 
-  <pre><code class="javascript"><span class="comment">// forall (f: json -&gt; bool, b: bool), f (f (f b)) &equiv; f(b).</span>
+  <pre><code class="javascript"><span class="comment">// forall (f: bool -&gt; bool, b: bool), f (f (f b)) &equiv; f(b).</span>
 var boolFnAppliedThrice =
   jsc.forall(<span class="literal">"bool -&gt; bool"</span>, <span class="literal">"bool"</span>, function (<span class="variable">f</span>, <span class="variable">b</span>) {
     return <span class="variable">f</span>(<span class="variable">f</span>(<span class="variable">f</span><span class="variable">(b)</span>)) === <span class="variable">f</span><span class="variable">(b)</span>;
